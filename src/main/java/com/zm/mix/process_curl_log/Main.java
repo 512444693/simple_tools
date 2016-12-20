@@ -55,7 +55,7 @@ public class Main {
             outBuffer.append("\r\n");
         }
 
-        PrintWriter writer = new PrintWriter(new FileWriter(dir.getAbsolutePath() + File.separator + "report.csv"));
+        PrintWriter writer = new PrintWriter(new FileWriter(dir.getAbsolutePath() + File.separator + dir.getName() + ".csv"));
         writer.write(outBuffer.toString());
         writer.close();
     }
