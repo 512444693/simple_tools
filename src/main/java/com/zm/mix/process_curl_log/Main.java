@@ -2,6 +2,7 @@ package com.zm.mix.process_curl_log;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ public class Main {
             return;
         }
         File dir = new File(args[0]);*/
-        File dir = new File("E:\\test");
+        File dir = new File("C:\\Users\\zhangmin\\Desktop\\联通");
         if(!dir.isDirectory()) {
             System.out.println("Need a directory");
             return;
@@ -43,7 +44,8 @@ public class Main {
         outBuffer.append("\r\n");
 
         for(int j = 0; j < maxLine; j++) {
-            outBuffer.append(j + 1);
+            Date date = new Date(j*1000);
+            outBuffer.append(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
             for (int i = 0; i < lineArray.size(); i++) {
                 LineInfo tmpLI = lineArray.get(i);
                 if(j >= tmpLI.list.size()) {
